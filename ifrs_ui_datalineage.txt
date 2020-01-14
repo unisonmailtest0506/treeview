@@ -1,0 +1,677 @@
+SET DEFINE OFF;
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1','MIP_POR','Column','MIP_POR.PORTFOLIO_CIC.INSTTYPE','strip(coalesce(PORTFOLIO_MODEL.MODEL_EAD,PORTFOLIO_MODEL.PORTFOLIOID))');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.2','MIP_POR','Column','MIP_POR.PORTFOLIO_CIC.MODEL_EAD','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.3','MIP_POR','Column','MIP_POR.PORTFOLIO_CIC.CNTC_REF','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.4','MIP_POR','Column','MIP_POR.PORTFOLIO_CIC.PROD_CD_VAL','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.5','MIP_POR','Column','MIP_POR.PORTFOLIO_CIC.OUT_GLOBAL_AMT','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.6','MIP_POR','Column','MIP_POR.PORTFOLIO_CIC.MATURITY','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.7','MIP_POR','Column','MIP_POR.PORTFOLIO_CIC.LMT_AMT','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.8','MIP_POR','Column','MIP_POR.PORTFOLIO_CIC.EAD_PROD_TYPE','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.9','MIP_POR','Column','MIP_POR.PORTFOLIO_CIC.F_UNDRAWN','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.10','MIP_POR','Column','MIP_POR.PORTFOLIO_CIC.SEGMENT_EAD','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.11','MIP_POR','Column','MIP_POR.PORTFOLIO_CIC.DUMMY_EXP_FLAG','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.12','MIP_POR','Column','MIP_POR.PORTFOLIO_CIC.EXISTING_DEFAULT','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.13','MIP_POR','Column','MIP_POR.PORTFOLIO_CIC.PORTFOLIOID','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.14','MIP_POR','Column','MIP_POR.PORTFOLIO_CIC.COMMITTED_FLAG','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.15','MIP_POR','Column','MIP_POR.PORTFOLIO_CIC.LIMIT_STRUCTURE_ID','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.16','MIP_POR','Column','MIP_POR.PORTFOLIO_CIC.LMT_EDW_ID','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.1','STAGING','Column','STAGING.PORTFOLIO_MODEL.MODEL_EAD','From the BRM :
+Flow Name :Portfolio_stamping
+if (PORTFOLIO_PRODUCT = ''SF'') then do;
+portfolioid = ''C_SF'';
+MODEL_TYPE = ''CIC'';
+MODEL_EADLT = ''C_ALL_EADLT'';
+MODEL_LGDLT = ''C_ALL_LGDLT'';
+MODEL_PDFL = ''C_PF_PDFL'';
+MODEL_LR = ''C_ALL_LR'';
+end;
+if (PORTFOLIO_PRODUCT = ''SOV'') then do;
+portfolioid = ''C_SOV'';
+MODEL_TYPE = ''CIC'';
+MODEL_PD12M = ''C_SOV_PD12M'';
+MODEL_EADLT = ''C_ALL_EADLT'';
+MODEL_LGDLT = ''C_ALL_LGDLT'';
+MODEL_PDFL = ''C_SOV_PDFL'';
+MODEL_LR = ''C_ALL_LR'';
+end;');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.2','STAGING','Column','STAGING.PORTFOLIO_MODEL.PORTFOLIOID','From the BRM :
+Flow Name :Portfolio_stamping
+if (PORTFOLIO_PRODUCT = ''SF'') then do;
+portfolioid = ''C_SF'';
+MODEL_TYPE = ''CIC'';
+MODEL_EADLT = ''C_ALL_EADLT'';
+MODEL_LGDLT = ''C_ALL_LGDLT'';
+MODEL_PDFL = ''C_PF_PDFL'';
+MODEL_LR = ''C_ALL_LR'';
+end;
+if (PORTFOLIO_PRODUCT = ''SOV'') then do;
+portfolioid = ''C_SOV'';
+MODEL_TYPE = ''CIC'';
+MODEL_PD12M = ''C_SOV_PD12M'';
+MODEL_EADLT = ''C_ALL_EADLT'';
+MODEL_LGDLT = ''C_ALL_LGDLT'';
+MODEL_PDFL = ''C_SOV_PDFL'';
+MODEL_LR = ''C_ALL_LR'';
+end;');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.1.1','STG_POR','Column','STG_POR.PORTFOLIO_X_COLLATERAL.MODEL_EAD','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.2.1','STG_POR','Column','STG_POR.PORTFOLIO_X_COLLATERAL.PORTFOLIOID','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.2.1.1','STAGING','Column','STAGING.DISTINCT_COUNTRYPROD.PORTFOLIO_COUNTRY','PORTFOLIO_COUNTRY=scan(MSTAMP,1,"_")');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.2.1.2','STAGING','Column','STAGING.DISTINCT_COUNTRYPROD.PORTFOLIO_PRODUCT','PORTFOLIO_PRODUCT=scan(MSTAMP,2,"_")');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.1.1.1','STAGING','Column','STAGING.DISTINCT_COUNTRYPROD.PORTFOLIO_COUNTRY','PORTFOLIO_COUNTRY=scan(MSTAMP,1,"_")');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.1.1.2','STAGING','Column','STAGING.DISTINCT_COUNTRYPROD.PORTFOLIO_PRODUCT','PORTFOLIO_PRODUCT=scan(MSTAMP,2,"_")');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.1.1.1.1','MFU','Column','EXTDATA.PSGL_MAPPING_RETAIL_MODEL.COUNTRY_CD','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.2.1.1.1','MFU','Column','EXTDATA.PSGL_MAPPING_RETAIL_MODEL.COUNTRY_CD','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.1.1.2.1','MFU','Column','EXTDATA.PSGL_MAPPING_RETAIL_MODEL.PSGL_PROD_CODE','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.2.1.2.1','MFU','Column','EXTDATA.PSGL_MAPPING_RETAIL_MODEL.PSGL_PROD_CODE','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.2.1.1.2','LAREA','Column','LAREA.COUNTERPARTY_LA_GLBL_CIC_EN.MSTAMP','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.2.1.1.2.1','LAREA','Column','LAREA.COUNTERPARTY_LA_GLBL_CIC_EN.IDSTRY_SUB_SEGMT_CD','MSTAMP
+/*case
+    when MSTAMP = ''OTHR'' then 
+        case
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Agriculture'',
+                             ''Energy Traders'',
+                             ''Global Corporates'',
+                             ''Insurance Companies'', 
+                             ''International Corporates'', 
+                             ''Local Corporates'',
+                             ''Metal Traders'', 
+                             ''Middle Markets'', 
+                             ''Multilaterals'', 
+                             ''Network Clients''   ) 
+                      then ''OT_CORP''
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Development Organisations'',
+                             ''Investment Banks'',
+                             ''Ministry of Finance'',
+                             ''Universal Banks'',
+                             ''Local Bank Non-Franchise'',
+                             ''Private Banks''    )
+                      then ''OT_BANK''
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Broker Dealers'',
+                             ''Investment Companies''   )
+                      then ''OT_BD''
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Public Pension Funds'',
+                             ''Financial Sponsors'',
+                             ''Real Money Funds''   )
+                      then ''OT_FD''
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Finance Companies''   )
+                      then ''OT_FL''
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Hedge Funds''  )
+                      then ''OT_LI''
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Other Government Entities'',
+                             ''Sovereign Wealth Funds'',
+                             ''Central Banks''   )
+                      then ''OT_SOV''
+             else MSTAMP
+         end
+    else coalesce(MSTAMP, ''UNMAPPED'')
+end*/');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.2.1.1.2.2','LAREA','Column','LAREA.COUNTERPARTY_LA_GLBL_CIC_EN.STANDALONE_SCORE','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.2.1.1.2.3','LAREA','Column','LAREA.COUNTERPARTY_LA_GLBL_CIC_EN.COUNTRY_OF_DOMICILE','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.2.1.1.2.4','LAREA','Column','LAREA.COUNTERPARTY_LA_GLBL_CIC_EN.COUNTRY_OF_INCORPORATION','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.2.1.1.2.5','LAREA','Column','LAREA.COUNTERPARTY_LA_GLBL_CIC_EN.IDSTRY_SEGMT_DESC','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.2.1.1.3','LAREA','Column','LAREA.PORTFOLIO_LA_RETAIL.MSTAMP','case 
+when MSTAMP ? ''ALL'' then MSTAMP
+
+when MSTAMP in (''HK_CCRC'', ''HK_PL'') and DRP_ACCT_FL in (''D'', ''T'') and PRINCIPAL_AMT_USD >= 0 then ''HK_DRP''
+when MSTAMP in (''HK_CCRC'', ''HK_PL'') and DRP_ACCT_FL in (''D'', ''T'') and PRINCIPAL_AMT_USD < 0 then '' ''
+when MSTAMP in (''SG_CC'', ''SG_RC'', ''SG_PL'') and DRP_ACCT_FL in (''D'', ''T'') and PRINCIPAL_AMT_USD >= 0 then  ''SG_DRP''
+when MSTAMP in (''SG_CC'', ''SG_RC'', ''SG_PL'') and DRP_ACCT_FL in (''D'', ''T'') and PRINCIPAL_AMT_USD < 0 then '' ''
+
+when 
+(
+(MSTAMP in (''SG_PL'') and strip(compress((LN_FUND_TYPE_CD)||TRIM(ACCT_SECTR_CD)||TRIM(ACCT_TYPE_CD)||TRIM(PROD_CD_VAL) )) in (''102145133'', ''102145134'') and PRINCIPAL_AMT_USD >0 )
+ or (MSTAMP in (''SG_CC'') AND ACCT_TYPE_CD IN (''214'',''260'',''218'') AND sum(PRINCIPAL_AMT_USD, MPS_UNBLLD_AMT) > 0 ) ) then ''SG_DRP''
+
+When 
+(
+(MSTAMP in (''SG_PL'') and strip(compress((LN_FUND_TYPE_CD)||TRIM(ACCT_SECTR_CD)||TRIM(ACCT_TYPE_CD)||TRIM(PROD_CD_VAL) )) in (''102145133'', ''102145134'') and PRINCIPAL_AMT_USD < 0 ) 
+or (MSTAMP in (''SG_CC'') AND ACCT_TYPE_CD IN (''214'',''260'',''218'') AND sum(PRINCIPAL_AMT_USD, MPS_UNBLLD_AMT) > 0  and  PRINCIPAL_AMT_USD <0 ) ) then '' ''
+
+when MSTAMP in (''KR_PL'',''KR_PLRO'', ''KR_CC'')  and MODEL_GROUP ne ''Loss Rate'' and DRP_ACCT_FL not in ('' '', ''N'') and PRINCIPAL_AMT_USD >= 0 then  ''KR_DRP''
+/* when MSTAMP in (''KR_PL'',''KR_PLRO'', ''KR_CC'')  and MODEL_GROUP ne ''Loss Rate'' and DRP_ACCT_FL not in ('' '', ''N'') and PRINCIPAL_AMT_USD < 0 then '' ''*/
+when MSTAMP in (''KR_PL'',''KR_PLRO'')  and MODEL_GROUP ne ''Loss Rate'' and DRP_ACCT_FL not in ('' '', ''N'') and PRINCIPAL_AMT_USD < 0 then '' ''
+
+/*
+ when MSTAMP in (''TW_PL'', ''TW_CC'') and DRP_ACCT_FL not in ('' '', ''N'') and PRINCIPAL_AMT_USD >= 0 then ''TW_DRP''
+ when MSTAMP in (''TW_PL'', ''TW_CC'') and DRP_ACCT_FL not in ('' '', ''N'') and PRINCIPAL_AMT_USD < 0 then '' ''
+*/
+ when (ACCT_TYPE_CD in (''292'',''229'',''294'',''192'',''129'',''234'',''244'',''199'',''307'',''357'',''358'',''359'')
+	or PROD_CD_VAL in (''511'' ''512'' ''513'' ''514'' ''515'' ''516'' ''517''))
+	and DATA_SRC_ID in (1184,499) and PRINCIPAL_AMT_USD >= 0 then ''TW_DRP''
+ when (ACCT_TYPE_CD in (''292'',''229'',''294'',''192'',''129'',''234'',''244'',''199'',''307'',''357'',''358'',''359'')
+	or PROD_CD_VAL in (''511'' ''512'' ''513'' ''514'' ''515'' ''516'' ''517''))
+	and DATA_SRC_ID in (1184,499) and PRINCIPAL_AMT_USD < 0 then '' ''
+when MSTAMP in (''MY_CC'') and DRP_ACCT_FL in (''D'', ''T'') then ''MY_PL''
+when MSTAMP in (''KR_CC'') and PROD_CD_VAL eq ''002077'' and ACCT_PTFOL_CD ne ''CDRP'' then ''KR_FCL''
+when MSTAMP in (''KR_PL'') and MODEL_GROUP ne ''Loss Rate'' then
+
+CASE
+	WHEN (
+			(
+
+				(
+					(PROD_CD_VAL =''000408'' and SUB_PROD_CD in (''001'',''914'',''915'',''922'',''962'')) or
+					(PROD_CD_VAL =''000419'' and SUB_PROD_CD not in (''002'',''003'',''005'',''006'',''007'',''008'',''033'', 
+					''072'',''073'',''075'',''076'',''077'',''078'',''085'',''086'',''216'',''916'',''923'',''926'',''963'',''190'',''191'',''201'',''202'',''203'',''216'',''098'',''099'', 
+					''025'',''920'',''016'',''960'',''026'',''211'',''213'',''214'',''301'',''302'')) or 
+					(PROD_CD_VAL =''001217'' and SUB_PROD_CD in (''401'',''402'',''951'',''953'',''961'',''962'')) or
+					(PROD_CD_VAL =''002002'' and SUB_PROD_CD in (''021'',''022'',''001'',''003'',''901'',''903'',''301'')) or
+					 PROD_CD_VAL =''001341''  or
+					(PROD_CD_VAL =''001205'' and SUB_PROD_CD in (''101'',''102'',''301'',''901''))  or
+					(PROD_CD_VAL =''002002'' and SUB_PROD_CD in (''302'')) or
+					(PROD_CD_VAL =''001217'' and SUB_PROD_CD in (''403'',''963''))
+				) 
+				and calculated repayment=''1.Credit Line''  
+			)		
+		or 
+		(
+				(
+					PROD_CD_VAL =''001217'' and SUB_PROD_CD not in (''001'',''002'',''003'',''004'',''007'',''106'',''123'',''124'',''151'',''152'',''206'',''301'',''401'',''402'',''906'',''951'',''953'',''961'',''962'',''403'',''963'') 
+				)
+				or (PROD_CD_VAL =''001217'' and SUB_PROD_CD in (''123'',''124''))
+				or (PROD_CD_VAL = ''002017'' and SUB_PROD_CD in (''001'',''002'',''003'')) 
+				or (PROD_CD_VAL = ''000419'' and SUB_PROD_CD in (''301'',''302'')) 
+				or (PROD_CD_VAL = ''002002'' and SUB_PROD_CD in (''101'',''102''))  
+				or (PROD_CD_VAL =''002019'' and SUB_PROD_CD in (''008'',''022''))   
+				or (PROD_CD_VAL =''002003'' and SUB_PROD_CD in (''008'',''022''))
+				or (PROD_CD_VAL=''002288'' and SUB_PROD_CD=''003'')
+				or (PROD_CD_VAL =''000419'' and SUB_PROD_CD not in (''002'',''003'',''005'',''006'',''007'',''008'',''033'', 
+					''072'',''073'',''075'',''076'',''077'',''078'',''085'',''086'',''216'',''916'',''923'',''926'',''963'',''190'',''191'',''201'',''202'',''203'',''216'',''098'',''099'', 
+					 ''025'',''920'',''016'',''960'',''026'',''211'',''213'',''214'',''301'',''302'')) 
+				or (PROD_CD_VAL =''001217'' and SUB_PROD_CD in (''401'',''402'',''951'',''953'',''961'',''962''))
+				or (PROD_CD_VAL =''002002'' and SUB_PROD_CD in (''021'',''022'',''001'',''003'',''901'',''903'',''301''))
+		) 
+	)
+	THEN ''''KR_PL''''    
+
+
+
+                 WHEN PROD_CD_VAL =''000408'' and SUB_PROD_CD in (''001'',''914'',''915'',''922'',''962'') THEN ''''KR_PLRO''''             
+                 WHEN PROD_CD_VAL =''002002'' and SUB_PROD_CD in (''021'',''022'',''001'',''003'',''901'',''903'',''301'') THEN ''''KR_PLRO''''
+                WHEN PROD_CD_VAL =''001341'' THEN ''''KR_PLRO''''  
+                WHEN PROD_CD_VAL =''001205'' and SUB_PROD_CD in (''101'',''102'',''301'',''901'') THEN ''''KR_PLRO''''     
+                 WHEN PROD_CD_VAL =''002002'' and SUB_PROD_CD in (''302'') THEN ''''KR_PLRO''''      
+                /*WHEN PROD_CD_VAL =''002288'' THEN ''''KR_PLRO''''       */        
+                 WHEN PROD_CD_VAL =''002288'' and SUB_PROD_CD ne ''003'' THEN ''''KR_PLRO''''
+                 WHEN PROD_CD_VAL =''002266'' and SUB_PROD_CD in (''001'',''002'',''003'',''004'',''005'',''010'',''011'',''020'') THEN ''''KR_PLRO''''                   
+                 WHEN PROD_CD_VAL =''001217'' and SUB_PROD_CD in (''001'',''002'',''003'',''004'',''007'',''401'',''402'',''403'',''951'',''953'',''961'',''962'',''963'') THEN ''''KR_PLRO''''
+                 WHEN PROD_CD_VAL =''002017'' and SUB_PROD_CD not in (''001'',''002'',''003'') THEN ''''KR_PLRO''''            
+                 WHEN PROD_CD_VAL =''000419'' and SUB_PROD_CD not in ( ''002'',''003'',''005'',''006'',''007'',''008'',''033'',
+                ''072'',''073'',''075'',''076'',''077'',''078'',''085'',''086'',''216'',''916'',''923'',''926'',''963'',''190'',''191'',''201'',''202'',''203'',''216'',''098'',''099'',
+                ''025'',''920'',''016'',''960'',''026'',''211'',''213'',''214'',''301'',''302'') THEN ''''KR_PLRO''''
+      ELSE MSTAMP
+      END
+/*jeonse*/
+when (ACCT_SBJCT_CD in (''002003'',''002013'') and LN_TYPE_CD in (''031'',''032'') 
+      or  ACCT_SBJCT_CD in (''002003'') and LN_TYPE_CD in (''041'',''241'') 
+      or ACCT_SBJCT_CD in (''002013'') and LN_TYPE_CD in (''041'',''042'') 
+      or ACCT_SBJCT_CD in (''002013'') and LN_TYPE_CD not in (''241'',''242'') ) and TP_SYSTEM_CD =''KEDW'' then ''KR_PL''
+
+else MSTAMP
+end');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.2.1.2.2','LAREA','Column','LAREA.COUNTERPARTY_LA_GLBL_CIC_EN.MSTAMP','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.2.1.2.2.1','LAREA','Column','LAREA.COUNTERPARTY_LA_GLBL_CIC_EN.IDSTRY_SUB_SEGMT_CD','MSTAMP
+/*case
+    when MSTAMP = ''OTHR'' then 
+        case
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Agriculture'',
+                             ''Energy Traders'',
+                             ''Global Corporates'',
+                             ''Insurance Companies'', 
+                             ''International Corporates'', 
+                             ''Local Corporates'',
+                             ''Metal Traders'', 
+                             ''Middle Markets'', 
+                             ''Multilaterals'', 
+                             ''Network Clients''   ) 
+                      then ''OT_CORP''
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Development Organisations'',
+                             ''Investment Banks'',
+                             ''Ministry of Finance'',
+                             ''Universal Banks'',
+                             ''Local Bank Non-Franchise'',
+                             ''Private Banks''    )
+                      then ''OT_BANK''
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Broker Dealers'',
+                             ''Investment Companies''   )
+                      then ''OT_BD''
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Public Pension Funds'',
+                             ''Financial Sponsors'',
+                             ''Real Money Funds''   )
+                      then ''OT_FD''
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Finance Companies''   )
+                      then ''OT_FL''
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Hedge Funds''  )
+                      then ''OT_LI''
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Other Government Entities'',
+                             ''Sovereign Wealth Funds'',
+                             ''Central Banks''   )
+                      then ''OT_SOV''
+             else MSTAMP
+         end
+    else coalesce(MSTAMP, ''UNMAPPED'')
+end*/');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.2.1.2.2.2','LAREA','Column','LAREA.COUNTERPARTY_LA_GLBL_CIC_EN.STANDALONE_SCORE','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.2.1.2.2.3','LAREA','Column','LAREA.COUNTERPARTY_LA_GLBL_CIC_EN.COUNTRY_OF_DOMICILE','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.2.1.2.2.4','LAREA','Column','LAREA.COUNTERPARTY_LA_GLBL_CIC_EN.COUNTRY_OF_INCORPORATION','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.2.1.2.2.5','LAREA','Column','LAREA.COUNTERPARTY_LA_GLBL_CIC_EN.IDSTRY_SEGMT_DESC','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.2.1.2.3','LAREA','Column','LAREA.PORTFOLIO_LA_RETAIL.MSTAMP','case 
+when MSTAMP ? ''ALL'' then MSTAMP
+
+when MSTAMP in (''HK_CCRC'', ''HK_PL'') and DRP_ACCT_FL in (''D'', ''T'') and PRINCIPAL_AMT_USD >= 0 then ''HK_DRP''
+when MSTAMP in (''HK_CCRC'', ''HK_PL'') and DRP_ACCT_FL in (''D'', ''T'') and PRINCIPAL_AMT_USD < 0 then '' ''
+when MSTAMP in (''SG_CC'', ''SG_RC'', ''SG_PL'') and DRP_ACCT_FL in (''D'', ''T'') and PRINCIPAL_AMT_USD >= 0 then  ''SG_DRP''
+when MSTAMP in (''SG_CC'', ''SG_RC'', ''SG_PL'') and DRP_ACCT_FL in (''D'', ''T'') and PRINCIPAL_AMT_USD < 0 then '' ''
+
+when 
+(
+(MSTAMP in (''SG_PL'') and strip(compress((LN_FUND_TYPE_CD)||TRIM(ACCT_SECTR_CD)||TRIM(ACCT_TYPE_CD)||TRIM(PROD_CD_VAL) )) in (''102145133'', ''102145134'') and PRINCIPAL_AMT_USD >0 )
+ or (MSTAMP in (''SG_CC'') AND ACCT_TYPE_CD IN (''214'',''260'',''218'') AND sum(PRINCIPAL_AMT_USD, MPS_UNBLLD_AMT) > 0 ) ) then ''SG_DRP''
+
+When 
+(
+(MSTAMP in (''SG_PL'') and strip(compress((LN_FUND_TYPE_CD)||TRIM(ACCT_SECTR_CD)||TRIM(ACCT_TYPE_CD)||TRIM(PROD_CD_VAL) )) in (''102145133'', ''102145134'') and PRINCIPAL_AMT_USD < 0 ) 
+or (MSTAMP in (''SG_CC'') AND ACCT_TYPE_CD IN (''214'',''260'',''218'') AND sum(PRINCIPAL_AMT_USD, MPS_UNBLLD_AMT) > 0  and  PRINCIPAL_AMT_USD <0 ) ) then '' ''
+
+when MSTAMP in (''KR_PL'',''KR_PLRO'', ''KR_CC'')  and MODEL_GROUP ne ''Loss Rate'' and DRP_ACCT_FL not in ('' '', ''N'') and PRINCIPAL_AMT_USD >= 0 then  ''KR_DRP''
+/* when MSTAMP in (''KR_PL'',''KR_PLRO'', ''KR_CC'')  and MODEL_GROUP ne ''Loss Rate'' and DRP_ACCT_FL not in ('' '', ''N'') and PRINCIPAL_AMT_USD < 0 then '' ''*/
+when MSTAMP in (''KR_PL'',''KR_PLRO'')  and MODEL_GROUP ne ''Loss Rate'' and DRP_ACCT_FL not in ('' '', ''N'') and PRINCIPAL_AMT_USD < 0 then '' ''
+
+/*
+ when MSTAMP in (''TW_PL'', ''TW_CC'') and DRP_ACCT_FL not in ('' '', ''N'') and PRINCIPAL_AMT_USD >= 0 then ''TW_DRP''
+ when MSTAMP in (''TW_PL'', ''TW_CC'') and DRP_ACCT_FL not in ('' '', ''N'') and PRINCIPAL_AMT_USD < 0 then '' ''
+*/
+ when (ACCT_TYPE_CD in (''292'',''229'',''294'',''192'',''129'',''234'',''244'',''199'',''307'',''357'',''358'',''359'')
+	or PROD_CD_VAL in (''511'' ''512'' ''513'' ''514'' ''515'' ''516'' ''517''))
+	and DATA_SRC_ID in (1184,499) and PRINCIPAL_AMT_USD >= 0 then ''TW_DRP''
+ when (ACCT_TYPE_CD in (''292'',''229'',''294'',''192'',''129'',''234'',''244'',''199'',''307'',''357'',''358'',''359'')
+	or PROD_CD_VAL in (''511'' ''512'' ''513'' ''514'' ''515'' ''516'' ''517''))
+	and DATA_SRC_ID in (1184,499) and PRINCIPAL_AMT_USD < 0 then '' ''
+when MSTAMP in (''MY_CC'') and DRP_ACCT_FL in (''D'', ''T'') then ''MY_PL''
+when MSTAMP in (''KR_CC'') and PROD_CD_VAL eq ''002077'' and ACCT_PTFOL_CD ne ''CDRP'' then ''KR_FCL''
+when MSTAMP in (''KR_PL'') and MODEL_GROUP ne ''Loss Rate'' then
+
+CASE
+	WHEN (
+			(
+
+				(
+					(PROD_CD_VAL =''000408'' and SUB_PROD_CD in (''001'',''914'',''915'',''922'',''962'')) or
+					(PROD_CD_VAL =''000419'' and SUB_PROD_CD not in (''002'',''003'',''005'',''006'',''007'',''008'',''033'', 
+					''072'',''073'',''075'',''076'',''077'',''078'',''085'',''086'',''216'',''916'',''923'',''926'',''963'',''190'',''191'',''201'',''202'',''203'',''216'',''098'',''099'', 
+					''025'',''920'',''016'',''960'',''026'',''211'',''213'',''214'',''301'',''302'')) or 
+					(PROD_CD_VAL =''001217'' and SUB_PROD_CD in (''401'',''402'',''951'',''953'',''961'',''962'')) or
+					(PROD_CD_VAL =''002002'' and SUB_PROD_CD in (''021'',''022'',''001'',''003'',''901'',''903'',''301'')) or
+					 PROD_CD_VAL =''001341''  or
+					(PROD_CD_VAL =''001205'' and SUB_PROD_CD in (''101'',''102'',''301'',''901''))  or
+					(PROD_CD_VAL =''002002'' and SUB_PROD_CD in (''302'')) or
+					(PROD_CD_VAL =''001217'' and SUB_PROD_CD in (''403'',''963''))
+				) 
+				and calculated repayment=''1.Credit Line''  
+			)		
+		or 
+		(
+				(
+					PROD_CD_VAL =''001217'' and SUB_PROD_CD not in (''001'',''002'',''003'',''004'',''007'',''106'',''123'',''124'',''151'',''152'',''206'',''301'',''401'',''402'',''906'',''951'',''953'',''961'',''962'',''403'',''963'') 
+				)
+				or (PROD_CD_VAL =''001217'' and SUB_PROD_CD in (''123'',''124''))
+				or (PROD_CD_VAL = ''002017'' and SUB_PROD_CD in (''001'',''002'',''003'')) 
+				or (PROD_CD_VAL = ''000419'' and SUB_PROD_CD in (''301'',''302'')) 
+				or (PROD_CD_VAL = ''002002'' and SUB_PROD_CD in (''101'',''102''))  
+				or (PROD_CD_VAL =''002019'' and SUB_PROD_CD in (''008'',''022''))   
+				or (PROD_CD_VAL =''002003'' and SUB_PROD_CD in (''008'',''022''))
+				or (PROD_CD_VAL=''002288'' and SUB_PROD_CD=''003'')
+				or (PROD_CD_VAL =''000419'' and SUB_PROD_CD not in (''002'',''003'',''005'',''006'',''007'',''008'',''033'', 
+					''072'',''073'',''075'',''076'',''077'',''078'',''085'',''086'',''216'',''916'',''923'',''926'',''963'',''190'',''191'',''201'',''202'',''203'',''216'',''098'',''099'', 
+					 ''025'',''920'',''016'',''960'',''026'',''211'',''213'',''214'',''301'',''302'')) 
+				or (PROD_CD_VAL =''001217'' and SUB_PROD_CD in (''401'',''402'',''951'',''953'',''961'',''962''))
+				or (PROD_CD_VAL =''002002'' and SUB_PROD_CD in (''021'',''022'',''001'',''003'',''901'',''903'',''301''))
+		) 
+	)
+	THEN ''''KR_PL''''    
+
+
+
+                 WHEN PROD_CD_VAL =''000408'' and SUB_PROD_CD in (''001'',''914'',''915'',''922'',''962'') THEN ''''KR_PLRO''''             
+                 WHEN PROD_CD_VAL =''002002'' and SUB_PROD_CD in (''021'',''022'',''001'',''003'',''901'',''903'',''301'') THEN ''''KR_PLRO''''
+                WHEN PROD_CD_VAL =''001341'' THEN ''''KR_PLRO''''  
+                WHEN PROD_CD_VAL =''001205'' and SUB_PROD_CD in (''101'',''102'',''301'',''901'') THEN ''''KR_PLRO''''     
+                 WHEN PROD_CD_VAL =''002002'' and SUB_PROD_CD in (''302'') THEN ''''KR_PLRO''''      
+                /*WHEN PROD_CD_VAL =''002288'' THEN ''''KR_PLRO''''       */        
+                 WHEN PROD_CD_VAL =''002288'' and SUB_PROD_CD ne ''003'' THEN ''''KR_PLRO''''
+                 WHEN PROD_CD_VAL =''002266'' and SUB_PROD_CD in (''001'',''002'',''003'',''004'',''005'',''010'',''011'',''020'') THEN ''''KR_PLRO''''                   
+                 WHEN PROD_CD_VAL =''001217'' and SUB_PROD_CD in (''001'',''002'',''003'',''004'',''007'',''401'',''402'',''403'',''951'',''953'',''961'',''962'',''963'') THEN ''''KR_PLRO''''
+                 WHEN PROD_CD_VAL =''002017'' and SUB_PROD_CD not in (''001'',''002'',''003'') THEN ''''KR_PLRO''''            
+                 WHEN PROD_CD_VAL =''000419'' and SUB_PROD_CD not in ( ''002'',''003'',''005'',''006'',''007'',''008'',''033'',
+                ''072'',''073'',''075'',''076'',''077'',''078'',''085'',''086'',''216'',''916'',''923'',''926'',''963'',''190'',''191'',''201'',''202'',''203'',''216'',''098'',''099'',
+                ''025'',''920'',''016'',''960'',''026'',''211'',''213'',''214'',''301'',''302'') THEN ''''KR_PLRO''''
+      ELSE MSTAMP
+      END
+/*jeonse*/
+when (ACCT_SBJCT_CD in (''002003'',''002013'') and LN_TYPE_CD in (''031'',''032'') 
+      or  ACCT_SBJCT_CD in (''002003'') and LN_TYPE_CD in (''041'',''241'') 
+      or ACCT_SBJCT_CD in (''002013'') and LN_TYPE_CD in (''041'',''042'') 
+      or ACCT_SBJCT_CD in (''002013'') and LN_TYPE_CD not in (''241'',''242'') ) and TP_SYSTEM_CD =''KEDW'' then ''KR_PL''
+
+else MSTAMP
+end');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.1.1.1.2','LAREA','Column','LAREA.COUNTERPARTY_LA_GLBL_CIC_EN.MSTAMP','MSTAMP
+/*case
+    when MSTAMP = ''OTHR'' then 
+        case
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Agriculture'',
+                             ''Energy Traders'',
+                             ''Global Corporates'',
+                             ''Insurance Companies'', 
+                             ''International Corporates'', 
+                             ''Local Corporates'',
+                             ''Metal Traders'', 
+                             ''Middle Markets'', 
+                             ''Multilaterals'', 
+                             ''Network Clients''   ) 
+                      then ''OT_CORP''
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Development Organisations'',
+                             ''Investment Banks'',
+                             ''Ministry of Finance'',
+                             ''Universal Banks'',
+                             ''Local Bank Non-Franchise'',
+                             ''Private Banks''    )
+                      then ''OT_BANK''
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Broker Dealers'',
+                             ''Investment Companies''   )
+                      then ''OT_BD''
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Public Pension Funds'',
+                             ''Financial Sponsors'',
+                             ''Real Money Funds''   )
+                      then ''OT_FD''
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Finance Companies''   )
+                      then ''OT_FL''
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Hedge Funds''  )
+                      then ''OT_LI''
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Other Government Entities'',
+                             ''Sovereign Wealth Funds'',
+                             ''Central Banks''   )
+                      then ''OT_SOV''
+             else MSTAMP
+         end
+    else coalesce(MSTAMP, ''UNMAPPED'')
+end*/');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.1.1.1.2.1','LAREA','Column','LAREA.COUNTERPARTY_LA_GLBL_CIC_EN.IDSTRY_SUB_SEGMT_CD','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.1.1.1.2.2','LAREA','Column','LAREA.COUNTERPARTY_LA_GLBL_CIC_EN.STANDALONE_SCORE','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.1.1.1.2.3','LAREA','Column','LAREA.COUNTERPARTY_LA_GLBL_CIC_EN.COUNTRY_OF_DOMICILE','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.1.1.1.2.4','LAREA','Column','LAREA.COUNTERPARTY_LA_GLBL_CIC_EN.COUNTRY_OF_INCORPORATION','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.1.1.1.2.5','LAREA','Column','LAREA.COUNTERPARTY_LA_GLBL_CIC_EN.IDSTRY_SEGMT_DESC','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.1.1.1.3','LAREA','Column','LAREA.PORTFOLIO_LA_RETAIL.MSTAMP','case 
+when MSTAMP ? ''ALL'' then MSTAMP
+
+when MSTAMP in (''HK_CCRC'', ''HK_PL'') and DRP_ACCT_FL in (''D'', ''T'') and PRINCIPAL_AMT_USD >= 0 then ''HK_DRP''
+when MSTAMP in (''HK_CCRC'', ''HK_PL'') and DRP_ACCT_FL in (''D'', ''T'') and PRINCIPAL_AMT_USD < 0 then '' ''
+when MSTAMP in (''SG_CC'', ''SG_RC'', ''SG_PL'') and DRP_ACCT_FL in (''D'', ''T'') and PRINCIPAL_AMT_USD >= 0 then  ''SG_DRP''
+when MSTAMP in (''SG_CC'', ''SG_RC'', ''SG_PL'') and DRP_ACCT_FL in (''D'', ''T'') and PRINCIPAL_AMT_USD < 0 then '' ''
+
+when 
+(
+(MSTAMP in (''SG_PL'') and strip(compress((LN_FUND_TYPE_CD)||TRIM(ACCT_SECTR_CD)||TRIM(ACCT_TYPE_CD)||TRIM(PROD_CD_VAL) )) in (''102145133'', ''102145134'') and PRINCIPAL_AMT_USD >0 )
+ or (MSTAMP in (''SG_CC'') AND ACCT_TYPE_CD IN (''214'',''260'',''218'') AND sum(PRINCIPAL_AMT_USD, MPS_UNBLLD_AMT) > 0 ) ) then ''SG_DRP''
+
+When 
+(
+(MSTAMP in (''SG_PL'') and strip(compress((LN_FUND_TYPE_CD)||TRIM(ACCT_SECTR_CD)||TRIM(ACCT_TYPE_CD)||TRIM(PROD_CD_VAL) )) in (''102145133'', ''102145134'') and PRINCIPAL_AMT_USD < 0 ) 
+or (MSTAMP in (''SG_CC'') AND ACCT_TYPE_CD IN (''214'',''260'',''218'') AND sum(PRINCIPAL_AMT_USD, MPS_UNBLLD_AMT) > 0  and  PRINCIPAL_AMT_USD <0 ) ) then '' ''
+
+when MSTAMP in (''KR_PL'',''KR_PLRO'', ''KR_CC'')  and MODEL_GROUP ne ''Loss Rate'' and DRP_ACCT_FL not in ('' '', ''N'') and PRINCIPAL_AMT_USD >= 0 then  ''KR_DRP''
+/* when MSTAMP in (''KR_PL'',''KR_PLRO'', ''KR_CC'')  and MODEL_GROUP ne ''Loss Rate'' and DRP_ACCT_FL not in ('' '', ''N'') and PRINCIPAL_AMT_USD < 0 then '' ''*/
+when MSTAMP in (''KR_PL'',''KR_PLRO'')  and MODEL_GROUP ne ''Loss Rate'' and DRP_ACCT_FL not in ('' '', ''N'') and PRINCIPAL_AMT_USD < 0 then '' ''
+
+/*
+ when MSTAMP in (''TW_PL'', ''TW_CC'') and DRP_ACCT_FL not in ('' '', ''N'') and PRINCIPAL_AMT_USD >= 0 then ''TW_DRP''
+ when MSTAMP in (''TW_PL'', ''TW_CC'') and DRP_ACCT_FL not in ('' '', ''N'') and PRINCIPAL_AMT_USD < 0 then '' ''
+*/
+ when (ACCT_TYPE_CD in (''292'',''229'',''294'',''192'',''129'',''234'',''244'',''199'',''307'',''357'',''358'',''359'')
+	or PROD_CD_VAL in (''511'' ''512'' ''513'' ''514'' ''515'' ''516'' ''517''))
+	and DATA_SRC_ID in (1184,499) and PRINCIPAL_AMT_USD >= 0 then ''TW_DRP''
+ when (ACCT_TYPE_CD in (''292'',''229'',''294'',''192'',''129'',''234'',''244'',''199'',''307'',''357'',''358'',''359'')
+	or PROD_CD_VAL in (''511'' ''512'' ''513'' ''514'' ''515'' ''516'' ''517''))
+	and DATA_SRC_ID in (1184,499) and PRINCIPAL_AMT_USD < 0 then '' ''
+when MSTAMP in (''MY_CC'') and DRP_ACCT_FL in (''D'', ''T'') then ''MY_PL''
+when MSTAMP in (''KR_CC'') and PROD_CD_VAL eq ''002077'' and ACCT_PTFOL_CD ne ''CDRP'' then ''KR_FCL''
+when MSTAMP in (''KR_PL'') and MODEL_GROUP ne ''Loss Rate'' then
+
+CASE
+	WHEN (
+			(
+
+				(
+					(PROD_CD_VAL =''000408'' and SUB_PROD_CD in (''001'',''914'',''915'',''922'',''962'')) or
+					(PROD_CD_VAL =''000419'' and SUB_PROD_CD not in (''002'',''003'',''005'',''006'',''007'',''008'',''033'', 
+					''072'',''073'',''075'',''076'',''077'',''078'',''085'',''086'',''216'',''916'',''923'',''926'',''963'',''190'',''191'',''201'',''202'',''203'',''216'',''098'',''099'', 
+					''025'',''920'',''016'',''960'',''026'',''211'',''213'',''214'',''301'',''302'')) or 
+					(PROD_CD_VAL =''001217'' and SUB_PROD_CD in (''401'',''402'',''951'',''953'',''961'',''962'')) or
+					(PROD_CD_VAL =''002002'' and SUB_PROD_CD in (''021'',''022'',''001'',''003'',''901'',''903'',''301'')) or
+					 PROD_CD_VAL =''001341''  or
+					(PROD_CD_VAL =''001205'' and SUB_PROD_CD in (''101'',''102'',''301'',''901''))  or
+					(PROD_CD_VAL =''002002'' and SUB_PROD_CD in (''302'')) or
+					(PROD_CD_VAL =''001217'' and SUB_PROD_CD in (''403'',''963''))
+				) 
+				and calculated repayment=''1.Credit Line''  
+			)		
+		or 
+		(
+				(
+					PROD_CD_VAL =''001217'' and SUB_PROD_CD not in (''001'',''002'',''003'',''004'',''007'',''106'',''123'',''124'',''151'',''152'',''206'',''301'',''401'',''402'',''906'',''951'',''953'',''961'',''962'',''403'',''963'') 
+				)
+				or (PROD_CD_VAL =''001217'' and SUB_PROD_CD in (''123'',''124''))
+				or (PROD_CD_VAL = ''002017'' and SUB_PROD_CD in (''001'',''002'',''003'')) 
+				or (PROD_CD_VAL = ''000419'' and SUB_PROD_CD in (''301'',''302'')) 
+				or (PROD_CD_VAL = ''002002'' and SUB_PROD_CD in (''101'',''102''))  
+				or (PROD_CD_VAL =''002019'' and SUB_PROD_CD in (''008'',''022''))   
+				or (PROD_CD_VAL =''002003'' and SUB_PROD_CD in (''008'',''022''))
+				or (PROD_CD_VAL=''002288'' and SUB_PROD_CD=''003'')
+				or (PROD_CD_VAL =''000419'' and SUB_PROD_CD not in (''002'',''003'',''005'',''006'',''007'',''008'',''033'', 
+					''072'',''073'',''075'',''076'',''077'',''078'',''085'',''086'',''216'',''916'',''923'',''926'',''963'',''190'',''191'',''201'',''202'',''203'',''216'',''098'',''099'', 
+					 ''025'',''920'',''016'',''960'',''026'',''211'',''213'',''214'',''301'',''302'')) 
+				or (PROD_CD_VAL =''001217'' and SUB_PROD_CD in (''401'',''402'',''951'',''953'',''961'',''962''))
+				or (PROD_CD_VAL =''002002'' and SUB_PROD_CD in (''021'',''022'',''001'',''003'',''901'',''903'',''301''))
+		) 
+	)
+	THEN ''''KR_PL''''    
+
+
+
+                 WHEN PROD_CD_VAL =''000408'' and SUB_PROD_CD in (''001'',''914'',''915'',''922'',''962'') THEN ''''KR_PLRO''''             
+                 WHEN PROD_CD_VAL =''002002'' and SUB_PROD_CD in (''021'',''022'',''001'',''003'',''901'',''903'',''301'') THEN ''''KR_PLRO''''
+                WHEN PROD_CD_VAL =''001341'' THEN ''''KR_PLRO''''  
+                WHEN PROD_CD_VAL =''001205'' and SUB_PROD_CD in (''101'',''102'',''301'',''901'') THEN ''''KR_PLRO''''     
+                 WHEN PROD_CD_VAL =''002002'' and SUB_PROD_CD in (''302'') THEN ''''KR_PLRO''''      
+                /*WHEN PROD_CD_VAL =''002288'' THEN ''''KR_PLRO''''       */        
+                 WHEN PROD_CD_VAL =''002288'' and SUB_PROD_CD ne ''003'' THEN ''''KR_PLRO''''
+                 WHEN PROD_CD_VAL =''002266'' and SUB_PROD_CD in (''001'',''002'',''003'',''004'',''005'',''010'',''011'',''020'') THEN ''''KR_PLRO''''                   
+                 WHEN PROD_CD_VAL =''001217'' and SUB_PROD_CD in (''001'',''002'',''003'',''004'',''007'',''401'',''402'',''403'',''951'',''953'',''961'',''962'',''963'') THEN ''''KR_PLRO''''
+                 WHEN PROD_CD_VAL =''002017'' and SUB_PROD_CD not in (''001'',''002'',''003'') THEN ''''KR_PLRO''''            
+                 WHEN PROD_CD_VAL =''000419'' and SUB_PROD_CD not in ( ''002'',''003'',''005'',''006'',''007'',''008'',''033'',
+                ''072'',''073'',''075'',''076'',''077'',''078'',''085'',''086'',''216'',''916'',''923'',''926'',''963'',''190'',''191'',''201'',''202'',''203'',''216'',''098'',''099'',
+                ''025'',''920'',''016'',''960'',''026'',''211'',''213'',''214'',''301'',''302'') THEN ''''KR_PLRO''''
+      ELSE MSTAMP
+      END
+/*jeonse*/
+when (ACCT_SBJCT_CD in (''002003'',''002013'') and LN_TYPE_CD in (''031'',''032'') 
+      or  ACCT_SBJCT_CD in (''002003'') and LN_TYPE_CD in (''041'',''241'') 
+      or ACCT_SBJCT_CD in (''002013'') and LN_TYPE_CD in (''041'',''042'') 
+      or ACCT_SBJCT_CD in (''002013'') and LN_TYPE_CD not in (''241'',''242'') ) and TP_SYSTEM_CD =''KEDW'' then ''KR_PL''
+
+else MSTAMP
+end');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.1.1.2.2','LAREA','Column','LAREA.COUNTERPARTY_LA_GLBL_CIC_EN.MSTAMP','MSTAMP
+/*case
+    when MSTAMP = ''OTHR'' then 
+        case
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Agriculture'',
+                             ''Energy Traders'',
+                             ''Global Corporates'',
+                             ''Insurance Companies'', 
+                             ''International Corporates'', 
+                             ''Local Corporates'',
+                             ''Metal Traders'', 
+                             ''Middle Markets'', 
+                             ''Multilaterals'', 
+                             ''Network Clients''   ) 
+                      then ''OT_CORP''
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Development Organisations'',
+                             ''Investment Banks'',
+                             ''Ministry of Finance'',
+                             ''Universal Banks'',
+                             ''Local Bank Non-Franchise'',
+                             ''Private Banks''    )
+                      then ''OT_BANK''
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Broker Dealers'',
+                             ''Investment Companies''   )
+                      then ''OT_BD''
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Public Pension Funds'',
+                             ''Financial Sponsors'',
+                             ''Real Money Funds''   )
+                      then ''OT_FD''
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Finance Companies''   )
+                      then ''OT_FL''
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Hedge Funds''  )
+                      then ''OT_LI''
+             when IDSTRY_SUB_SEGMT_CD in (
+                             ''Other Government Entities'',
+                             ''Sovereign Wealth Funds'',
+                             ''Central Banks''   )
+                      then ''OT_SOV''
+             else MSTAMP
+         end
+    else coalesce(MSTAMP, ''UNMAPPED'')
+end*/');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.1.1.2.2.1','LAREA','Column','LAREA.COUNTERPARTY_LA_GLBL_CIC_EN.IDSTRY_SUB_SEGMT_CD','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.1.1.2.2.2','LAREA','Column','LAREA.COUNTERPARTY_LA_GLBL_CIC_EN.STANDALONE_SCORE','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.1.1.2.2.3','LAREA','Column','LAREA.COUNTERPARTY_LA_GLBL_CIC_EN.COUNTRY_OF_DOMICILE','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.1.1.2.2.4','LAREA','Column','LAREA.COUNTERPARTY_LA_GLBL_CIC_EN.COUNTRY_OF_INCORPORATION','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.1.1.2.2.5','LAREA','Column','LAREA.COUNTERPARTY_LA_GLBL_CIC_EN.IDSTRY_SEGMT_DESC','');
+Insert into EXPORT_TABLE ("cde","stagno","stagnm","deptype","expression","logic") values ('EAD','1.1.1.1.2.3','LAREA','Column','LAREA.PORTFOLIO_LA_RETAIL.MSTAMP','case 
+when MSTAMP ? ''ALL'' then MSTAMP
+
+when MSTAMP in (''HK_CCRC'', ''HK_PL'') and DRP_ACCT_FL in (''D'', ''T'') and PRINCIPAL_AMT_USD >= 0 then ''HK_DRP''
+when MSTAMP in (''HK_CCRC'', ''HK_PL'') and DRP_ACCT_FL in (''D'', ''T'') and PRINCIPAL_AMT_USD < 0 then '' ''
+when MSTAMP in (''SG_CC'', ''SG_RC'', ''SG_PL'') and DRP_ACCT_FL in (''D'', ''T'') and PRINCIPAL_AMT_USD >= 0 then  ''SG_DRP''
+when MSTAMP in (''SG_CC'', ''SG_RC'', ''SG_PL'') and DRP_ACCT_FL in (''D'', ''T'') and PRINCIPAL_AMT_USD < 0 then '' ''
+
+when 
+(
+(MSTAMP in (''SG_PL'') and strip(compress((LN_FUND_TYPE_CD)||TRIM(ACCT_SECTR_CD)||TRIM(ACCT_TYPE_CD)||TRIM(PROD_CD_VAL) )) in (''102145133'', ''102145134'') and PRINCIPAL_AMT_USD >0 )
+ or (MSTAMP in (''SG_CC'') AND ACCT_TYPE_CD IN (''214'',''260'',''218'') AND sum(PRINCIPAL_AMT_USD, MPS_UNBLLD_AMT) > 0 ) ) then ''SG_DRP''
+
+When 
+(
+(MSTAMP in (''SG_PL'') and strip(compress((LN_FUND_TYPE_CD)||TRIM(ACCT_SECTR_CD)||TRIM(ACCT_TYPE_CD)||TRIM(PROD_CD_VAL) )) in (''102145133'', ''102145134'') and PRINCIPAL_AMT_USD < 0 ) 
+or (MSTAMP in (''SG_CC'') AND ACCT_TYPE_CD IN (''214'',''260'',''218'') AND sum(PRINCIPAL_AMT_USD, MPS_UNBLLD_AMT) > 0  and  PRINCIPAL_AMT_USD <0 ) ) then '' ''
+
+when MSTAMP in (''KR_PL'',''KR_PLRO'', ''KR_CC'')  and MODEL_GROUP ne ''Loss Rate'' and DRP_ACCT_FL not in ('' '', ''N'') and PRINCIPAL_AMT_USD >= 0 then  ''KR_DRP''
+/* when MSTAMP in (''KR_PL'',''KR_PLRO'', ''KR_CC'')  and MODEL_GROUP ne ''Loss Rate'' and DRP_ACCT_FL not in ('' '', ''N'') and PRINCIPAL_AMT_USD < 0 then '' ''*/
+when MSTAMP in (''KR_PL'',''KR_PLRO'')  and MODEL_GROUP ne ''Loss Rate'' and DRP_ACCT_FL not in ('' '', ''N'') and PRINCIPAL_AMT_USD < 0 then '' ''
+
+/*
+ when MSTAMP in (''TW_PL'', ''TW_CC'') and DRP_ACCT_FL not in ('' '', ''N'') and PRINCIPAL_AMT_USD >= 0 then ''TW_DRP''
+ when MSTAMP in (''TW_PL'', ''TW_CC'') and DRP_ACCT_FL not in ('' '', ''N'') and PRINCIPAL_AMT_USD < 0 then '' ''
+*/
+ when (ACCT_TYPE_CD in (''292'',''229'',''294'',''192'',''129'',''234'',''244'',''199'',''307'',''357'',''358'',''359'')
+	or PROD_CD_VAL in (''511'' ''512'' ''513'' ''514'' ''515'' ''516'' ''517''))
+	and DATA_SRC_ID in (1184,499) and PRINCIPAL_AMT_USD >= 0 then ''TW_DRP''
+ when (ACCT_TYPE_CD in (''292'',''229'',''294'',''192'',''129'',''234'',''244'',''199'',''307'',''357'',''358'',''359'')
+	or PROD_CD_VAL in (''511'' ''512'' ''513'' ''514'' ''515'' ''516'' ''517''))
+	and DATA_SRC_ID in (1184,499) and PRINCIPAL_AMT_USD < 0 then '' ''
+when MSTAMP in (''MY_CC'') and DRP_ACCT_FL in (''D'', ''T'') then ''MY_PL''
+when MSTAMP in (''KR_CC'') and PROD_CD_VAL eq ''002077'' and ACCT_PTFOL_CD ne ''CDRP'' then ''KR_FCL''
+when MSTAMP in (''KR_PL'') and MODEL_GROUP ne ''Loss Rate'' then
+
+CASE
+	WHEN (
+			(
+
+				(
+					(PROD_CD_VAL =''000408'' and SUB_PROD_CD in (''001'',''914'',''915'',''922'',''962'')) or
+					(PROD_CD_VAL =''000419'' and SUB_PROD_CD not in (''002'',''003'',''005'',''006'',''007'',''008'',''033'', 
+					''072'',''073'',''075'',''076'',''077'',''078'',''085'',''086'',''216'',''916'',''923'',''926'',''963'',''190'',''191'',''201'',''202'',''203'',''216'',''098'',''099'', 
+					''025'',''920'',''016'',''960'',''026'',''211'',''213'',''214'',''301'',''302'')) or 
+					(PROD_CD_VAL =''001217'' and SUB_PROD_CD in (''401'',''402'',''951'',''953'',''961'',''962'')) or
+					(PROD_CD_VAL =''002002'' and SUB_PROD_CD in (''021'',''022'',''001'',''003'',''901'',''903'',''301'')) or
+					 PROD_CD_VAL =''001341''  or
+					(PROD_CD_VAL =''001205'' and SUB_PROD_CD in (''101'',''102'',''301'',''901''))  or
+					(PROD_CD_VAL =''002002'' and SUB_PROD_CD in (''302'')) or
+					(PROD_CD_VAL =''001217'' and SUB_PROD_CD in (''403'',''963''))
+				) 
+				and calculated repayment=''1.Credit Line''  
+			)		
+		or 
+		(
+				(
+					PROD_CD_VAL =''001217'' and SUB_PROD_CD not in (''001'',''002'',''003'',''004'',''007'',''106'',''123'',''124'',''151'',''152'',''206'',''301'',''401'',''402'',''906'',''951'',''953'',''961'',''962'',''403'',''963'') 
+				)
+				or (PROD_CD_VAL =''001217'' and SUB_PROD_CD in (''123'',''124''))
+				or (PROD_CD_VAL = ''002017'' and SUB_PROD_CD in (''001'',''002'',''003'')) 
+				or (PROD_CD_VAL = ''000419'' and SUB_PROD_CD in (''301'',''302'')) 
+				or (PROD_CD_VAL = ''002002'' and SUB_PROD_CD in (''101'',''102''))  
+				or (PROD_CD_VAL =''002019'' and SUB_PROD_CD in (''008'',''022''))   
+				or (PROD_CD_VAL =''002003'' and SUB_PROD_CD in (''008'',''022''))
+				or (PROD_CD_VAL=''002288'' and SUB_PROD_CD=''003'')
+				or (PROD_CD_VAL =''000419'' and SUB_PROD_CD not in (''002'',''003'',''005'',''006'',''007'',''008'',''033'', 
+					''072'',''073'',''075'',''076'',''077'',''078'',''085'',''086'',''216'',''916'',''923'',''926'',''963'',''190'',''191'',''201'',''202'',''203'',''216'',''098'',''099'', 
+					 ''025'',''920'',''016'',''960'',''026'',''211'',''213'',''214'',''301'',''302'')) 
+				or (PROD_CD_VAL =''001217'' and SUB_PROD_CD in (''401'',''402'',''951'',''953'',''961'',''962''))
+				or (PROD_CD_VAL =''002002'' and SUB_PROD_CD in (''021'',''022'',''001'',''003'',''901'',''903'',''301''))
+		) 
+	)
+	THEN ''''KR_PL''''    
+
+
+
+                 WHEN PROD_CD_VAL =''000408'' and SUB_PROD_CD in (''001'',''914'',''915'',''922'',''962'') THEN ''''KR_PLRO''''             
+                 WHEN PROD_CD_VAL =''002002'' and SUB_PROD_CD in (''021'',''022'',''001'',''003'',''901'',''903'',''301'') THEN ''''KR_PLRO''''
+                WHEN PROD_CD_VAL =''001341'' THEN ''''KR_PLRO''''  
+                WHEN PROD_CD_VAL =''001205'' and SUB_PROD_CD in (''101'',''102'',''301'',''901'') THEN ''''KR_PLRO''''     
+                 WHEN PROD_CD_VAL =''002002'' and SUB_PROD_CD in (''302'') THEN ''''KR_PLRO''''      
+                /*WHEN PROD_CD_VAL =''002288'' THEN ''''KR_PLRO''''       */        
+                 WHEN PROD_CD_VAL =''002288'' and SUB_PROD_CD ne ''003'' THEN ''''KR_PLRO''''
+                 WHEN PROD_CD_VAL =''002266'' and SUB_PROD_CD in (''001'',''002'',''003'',''004'',''005'',''010'',''011'',''020'') THEN ''''KR_PLRO''''                   
+                 WHEN PROD_CD_VAL =''001217'' and SUB_PROD_CD in (''001'',''002'',''003'',''004'',''007'',''401'',''402'',''403'',''951'',''953'',''961'',''962'',''963'') THEN ''''KR_PLRO''''
+                 WHEN PROD_CD_VAL =''002017'' and SUB_PROD_CD not in (''001'',''002'',''003'') THEN ''''KR_PLRO''''            
+                 WHEN PROD_CD_VAL =''000419'' and SUB_PROD_CD not in ( ''002'',''003'',''005'',''006'',''007'',''008'',''033'',
+                ''072'',''073'',''075'',''076'',''077'',''078'',''085'',''086'',''216'',''916'',''923'',''926'',''963'',''190'',''191'',''201'',''202'',''203'',''216'',''098'',''099'',
+                ''025'',''920'',''016'',''960'',''026'',''211'',''213'',''214'',''301'',''302'') THEN ''''KR_PLRO''''
+      ELSE MSTAMP
+      END
+/*jeonse*/
+when (ACCT_SBJCT_CD in (''002003'',''002013'') and LN_TYPE_CD in (''031'',''032'') 
+      or  ACCT_SBJCT_CD in (''002003'') and LN_TYPE_CD in (''041'',''241'') 
+      or ACCT_SBJCT_CD in (''002013'') and LN_TYPE_CD in (''041'',''042'') 
+      or ACCT_SBJCT_CD in (''002013'') and LN_TYPE_CD not in (''241'',''242'') ) and TP_SYSTEM_CD =''KEDW'' then ''KR_PL''
+
+else MSTAMP
+end');
